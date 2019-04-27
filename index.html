@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+</head>
+<body>
+
+<style>
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column wrap;
+}
+
+div, button, span {
+	margin: 10px;
+}
+
+.hide {
+	display: none;
+}
+
+.show {
+	display: inline-block;
+}
+
+.highlighted {
+	background-color: yellow;
+}
+
+</style>
+
+<button id="mybutton">show sum</button>
+<div id="output"></div>
+
+<div id="mydiv">click here</div>
+
+<button id="colors">pretty</button>
+<div id="ourdiv">look</div>
+
+<button id="addition">plus</button>
+<span id="add"></span>
+
+<span id="mytext">here's some text</span>
+
+<button id="goodbye">farewell</button>
+<button id="hello">hi</button>
+<div id="conflicted">helpMe</div>
+
+<button id="master">so special</button>
+<div id="unreliable">slim shady</div>
+
+<button id="iterate">beam me up</button>
+<div id="go">0</div>
+
+
+
+<script>
+/*
+function togglePlay(){
+	var x = document.getElementById('unreliable');
+	if (x.style.display === 'block') {
+		x.style.display = 'none';
+	} else {
+		x.style.display = 'block';
+	}
+}
+
+document.getElementById('master').onclick = togglePlay;
+*/
+
+/*
+function beamMeUp(){
+	var x = document.getElementById('go'), count = 0;
+
+	if ( x < 5 ) {
+		count += 1;
+	}
+	else if ( x >= 5) {
+		document.getElementById('go').innerHTML = "Game Over.";
+	}
+}
+
+
+document.getElementById('iterate').onclick = beamMeUp;
+*/
+
+function beamMeUp(){
+	
+	var div = document.getElementById('go'), count = 0;
+	var button = document.getElementById('iterate');
+
+	button.onclick = function(){
+		count += 1;
+		div.innerHTML = count;
+		if ( count < 5 ) {
+			div.innerHTML = count;
+		}
+		else if ( count >= 5 ) {
+			div.innerHTML = 'Game Over!';
+		}
+	}
+
+}
+
+beamMeUp();
+
+
+
+
+
+// if # < 5, iterate; if = 5 change message (all onclick)
+// iterate onclick
+
+//1
+function showSum(a,b){
+	var sum = a+b;
+	document.getElementById('output').innerHTML = 'Sum: '+sum;
+}
+	document.getElementById('mybutton').onclick = function(){
+	showSum(3,5);
+};
+
+
+//2
+function changeText(){
+	document.getElementById('mydiv').innerHTML = 'new text';
+}
+
+document.getElementById('mydiv').onclick = changeText;
+
+
+//3
+function changeDiv(){
+	document.getElementById('ourdiv').style.backgroundColor = 'blue';
+}
+
+document.getElementById('colors').onclick = changeDiv;
+
+
+//4
+function showSum(a,b){
+	var sum = a+b;
+	document.getElementById('output').innerHTML = 'Sum: '+sum;
+}
+	document.getElementById('mybutton').onclick = function(){ 
+		showSum(3,5);
+};
+
+function sumItUp(a,b){
+	var sum = a+b;
+	document.getElementById('add').innerHTML = sum;
+}
+	document.getElementById('addition').onclick = function(){
+		sumItUp(3,3);
+};
+
+//5
+document.getElementById('mytext').className = 'highlighted';
+
+//6a
+function hideDiv(){
+	document.getElementById('conflicted').className = 'hide';
+}
+
+document.getElementById('goodbye').onclick = hideDiv;
+
+//6b
+function showDiv(){
+	document.getElementById('conflicted').className = 'show';
+}
+
+document.getElementById('hello').onclick = showDiv;
+
+//7
+
+function togglePlay(){
+	var x = document.getElementById('unreliable');
+	if (x.style.display === 'block') {
+		x.style.display = 'none';
+	} else {
+		x.style.display = 'block';
+	}
+}
+
+document.getElementById('master').onclick = togglePlay;
+
+
+
+</script>
+</body>
+</html>
